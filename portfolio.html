@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joen Foo | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="portfolio.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section active hero">
+    <h1>Joen Foo</h1>
+    <p class="typing-line"><span id="typing"></span><span class="cursor">|</span></p>
+    <div>
+      <a href="projects.html" class="btn">📁 View projects</a>
+      <a href="achievements.html" class="btn">🏆 Achievements</a>
+      <a href="experiences.html" class="btn">💼 Experiences</a>
+    </div>
+  </section>
+
+  <script>
+    const typingEl = document.getElementById("typing");
+    const words = ["Electronics", "Arduino", "3D Printing", "Video Editing", "Music"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let typingForward = true;
+
+    function typeWord() {
+      const word = words[wordIndex];
+      if (typingForward) {
+        typingEl.textContent = word.slice(0, ++charIndex);
+        if (charIndex === word.length) {
+          typingForward = false;
+          setTimeout(typeWord, 1000);
+        } else {
+          setTimeout(typeWord, 100);
+        }
+      } else {
+        typingEl.textContent = word.slice(0, --charIndex);
+        if (charIndex === 0) {
+          typingForward = true;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeWord, 300);
+        } else {
+          setTimeout(typeWord, 50);
+        }
+      }
+    }
+    typeWord();
+  </script>
+</body>
+</html>
+

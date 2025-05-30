@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joen Foo | Achievements</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card hover effect */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="portfolio.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="achievements.html" class="active">Achievements</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section active">
+    <h2>Achievements</h2>
+    <div class="cards-container">
+      <div class="card scroll-reveal">
+        <img src="photos/maxwell-maxwell-spin.gif" alt="spin" />
+        <h3>Achievement 1</h3>
+        <p>Description of Achievement 1.</p>
+        <div class="tags">
+          <span class="tag">2025</span>
+          <span class="tag">React</span>
+          <span class="tag">Personal</span>
+        </div>
+        <a href="award1.html" class="btn">View More</a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/maxwell-maxwell-spin.gif" alt="spin" />
+        <h3>Achievement 2</h3>
+        <p>Description of Achievement 2.</p>
+        <div class="tags">
+          <span class="tag">2024</span>
+          <span class="tag">HTML</span>
+          <span class="tag">Collab</span>
+        </div>
+        <a href="award2.html" class="btn">View More</a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/maxwell-maxwell-spin.gif" alt="spin" />
+        <h3>Achievement 3</h3>
+        <p>Description of Achievement 3.</p>
+        <div class="tags">
+          <span class="tag">2023</span>
+          <span class="tag">Python</span>
+          <span class="tag">School</span>
+        </div>
+        <a href="award3.html" class="btn">View More</a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/maxwell-maxwell-spin.gif" alt="spin" />
+        <h3>Achievement 4</h3>
+        <p>Description of Achievement 4.</p>
+        <div class="tags">
+          <span class="tag">2023</span>
+          <span class="tag">Python</span>
+          <span class="tag">School</span>
+        </div>
+        <a href="award4.html" class="btn">View More</a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/maxwell-maxwell-spin.gif" alt="spin" />
+        <h3>Achievement 5</h3>
+        <p>Description of Achievement 5.</p>
+        <div class="tags">
+          <span class="tag">2023</span>
+          <span class="tag">Python</span>
+          <span class="tag">School</span>
+        </div>
+        <a href="award5.html" class="btn">View More</a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/maxwell-maxwell-spin.gif" alt="spin" />
+        <h3>Achievement 6</h3>
+        <p>Description of Achievement 6.</p>
+        <div class="tags">
+          <span class="tag">2023</span>
+          <span class="tag">Python</span>
+          <span class="tag">School</span>
+        </div>
+        <a href="award6.html" class="btn">View More</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
